@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GestureApp</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="btn_title">Click Me</string>
+    <string name="message_display">Display Message</string>
+    <string name="click_message">OnClickListener</string>
+    <string name="long_click_message">OnLongClickListener</string>
+</resources>
