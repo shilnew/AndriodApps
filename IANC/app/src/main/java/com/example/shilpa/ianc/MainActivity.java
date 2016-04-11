@@ -3,6 +3,7 @@ package com.example.shilpa.ianc;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -20,6 +21,7 @@ public class MainActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        String sNews = "";
 
         String[] itemsIANC = {"About", "Past Event", "Current Committee", "Join us"};
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, itemsIANC);
@@ -28,6 +30,12 @@ public class MainActivity extends ListActivity {
 
         TextView txtTitle = (TextView) findViewById(R.id.txtTitle);
         txtTitle.setTextColor(Color.rgb(255, 255, 255));
+
+        TextView txtCurrentNews = (TextView) findViewById(R.id.txtCurrentNews);
+        sNews = "IANC Holi celebrations on 24th April 2016 from 3-6pm.";
+        sNews += "Venue: University Village Clubhouse, 1600 W Plum Street, Fort Collins, CO 80521";
+
+        txtCurrentNews.setText(sNews);
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -38,17 +46,21 @@ public class MainActivity extends ListActivity {
                     startActivity(intent);
                 }
                 else if (position == 1){
-                    Toast.makeText(getApplicationContext(),
-                            "Show the past events", Toast.LENGTH_LONG)
-                            .show();
+                    Intent intent = new Intent(getBaseContext(),PastEvent.class);
+                    startActivity(intent);
                 }
                 else if (position == 2){
-                    Toast.makeText(getApplicationContext(),
-                            "Show the current committee", Toast.LENGTH_LONG)
-                            .show();
-                }else if (position == 3){
                     Intent intent = new Intent(getBaseContext(),JoinUs.class);
                     startActivity(intent);
+
+                }else if (position == 3){
+
+                    String url = "https://groups.yahoo.com/neo";
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);
+
+
                 }
 
                 //Toast.makeText(getApplicationContext(),

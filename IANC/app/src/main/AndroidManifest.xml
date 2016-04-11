@@ -32,6 +32,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.shilpa.ianc.MainActivity" />
         </activity>
+        <activity
+            android:name=".PastEvent"
+            android:label="@string/title_activity_past_event"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.shilpa.ianc.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
