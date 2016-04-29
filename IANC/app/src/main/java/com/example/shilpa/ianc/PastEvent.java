@@ -1,9 +1,11 @@
 package com.example.shilpa.ianc;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class PastEvent extends AppCompatActivity {
 
@@ -11,6 +13,12 @@ public class PastEvent extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_past_event);
+
+        TextView txtTitle = (TextView) findViewById(R.id.txtTitle);
+        txtTitle.setTextColor(Color.rgb(255, 255, 255));
+
+        TextView txtHoli = (TextView) findViewById(R.id.txtHoli);
+        txtHoli.setText("Holi pictures are at the link: " + "https://www.flickr.com/photos/122823875@N07/sets/72157667683090605");
     }
 
     @Override
